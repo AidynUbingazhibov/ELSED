@@ -13,9 +13,12 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 # Create the ELSED library
 set(LIB_SOURCES "src/EdgeDrawer.cpp" "src/ELSED.cpp" "src/FullSegmentInfo.cpp")
+set(ELSED_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src CACHE INTERNAL "elsed headers locations")
+
 include_directories(src)
 add_library(elsed ${LIB_SOURCES})
 target_link_libraries(elsed ${OpenCV_LIBS})
+set(ELSED_LIB elsed CACHE INTERNAL "elsed library")
 
 # ELSED executable demo
 add_executable(elsed_main src/main.cpp)
