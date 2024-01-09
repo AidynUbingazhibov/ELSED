@@ -81,11 +81,11 @@ class ELSED {
   void clear();
 
   ELSEDParams getParams(){
-    return this.params;
+    return this->params;
   }
 
   void setParams(ELSEDParams params){
-    this.params = params;
+    this->params = params;
   }
 
   static void computeAnchorPoints(const cv::Mat &dirImage,
